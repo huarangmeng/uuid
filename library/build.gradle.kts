@@ -5,20 +5,26 @@ plugins {
 }
 
 kotlin {
-    targetHierarchy.default()
     jvm()
+    linuxX64()
+
     androidTarget {
         publishLibraryVariants("release")
         compilations.all {
             kotlinOptions {
-                jvmTarget = "1.8"
+                jvmTarget = "11"
             }
         }
     }
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
-    linuxX64()
+
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach { iosTarget ->
+
+    }
+
 
     sourceSets {
         val commonMain by getting {
