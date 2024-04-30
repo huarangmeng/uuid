@@ -3,7 +3,7 @@ plugins {
 }
 
 allprojects {
-    group = "com.hrm.uuid"
+    group = "io.github.huarangmeng"
     version = "0.0.1"
 }
 
