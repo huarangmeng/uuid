@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinSerialization)
     id("module.publication")
 }
 
@@ -30,7 +31,8 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                //put your multiplatform dependencies here
+                implementation(libs.kotlinx.serialization)
+                implementation(libs.kotlinx.datetime)
             }
         }
         val commonTest by getting {
