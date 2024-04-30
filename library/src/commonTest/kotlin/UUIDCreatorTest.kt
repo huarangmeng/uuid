@@ -1,4 +1,5 @@
 import kotlin.test.Test
+import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 import kotlin.test.assertTrue
 
@@ -7,8 +8,16 @@ class UUIDCreatorTest {
     @Test
     fun `UUIDV1 format is valid`() {
         val uuid = uuidV1()
-        val uuidRegex = Regex("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-1[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}\$")
-        assertTrue(uuidRegex.matches(uuid.toString()), "Generated UUID does not match the expected format")
+        val uuidRegex = Regex("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-1[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}")
+        val uuidString = uuid.toString()
+        println(uuidString)
+        assertTrue(uuidRegex.matches(uuidString), "Generated UUID does not match the expected format")
+    }
+
+    @Test
+    fun `UUIDV1 is v1`() {
+        val uuid = uuidV1()
+        assertEquals(uuid.version(), 1, "Generated UUID does not version 1")
     }
 
     @Test

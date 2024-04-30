@@ -1,7 +1,9 @@
 import kotlinx.datetime.Clock
-import kotlinx.datetime.Instant
 import kotlin.random.Random
 
+/**
+ * Time-based UUID
+ */
 fun uuidV1(): UUID {
     val now = Clock.System.now()
     val timestamp = (now.epochSeconds * 1_000_000_000L + now.nanosecondsOfSecond) / 100 + GREGORIAN_OFFSET
