@@ -48,7 +48,9 @@ publishing {
 }
 
 signing {
-    println("signing.gnupg.keyName = ${project.property("signing.gnupg.keyName")}")
+    if (project.hasProperty("signing.gnupg.keyName")) {
+        println("signing.gnupg.keyName = ${project.property("signing.gnupg.keyName")}")
+    }
     if (project.hasProperty("signing.gnupg.keyName")) {
         useGpgCmd()
         sign(publishing.publications)
