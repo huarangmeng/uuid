@@ -10,6 +10,8 @@ plugins {
 publishing {
     // Configure all publications
     publications.withType<MavenPublication> {
+        println("sonatypeUsername = ${project.property("sonatypeUsername")}")
+
         // Stub javadoc.jar artifact
         artifact(tasks.register("${name}JavadocJar", Jar::class) {
             archiveClassifier.set("javadoc")
@@ -44,6 +46,7 @@ publishing {
 }
 
 signing {
+    println("signing.gnupg.keyName = ${project.property("signing.gnupg.keyName")}")
     if (project.hasProperty("signing.gnupg.keyName")) {
         useGpgCmd()
         sign(publishing.publications)
