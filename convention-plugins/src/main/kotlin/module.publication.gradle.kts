@@ -10,7 +10,9 @@ plugins {
 publishing {
     // Configure all publications
     publications.withType<MavenPublication> {
-        println("sonatypeUsername = ${project.property("sonatypeUsername")}")
+        if (project.hasProperty("sonatypeUsername")) {
+            println("sonatypeUsername = ${project.property("sonatypeUsername")}")
+        }
 
         // Stub javadoc.jar artifact
         artifact(tasks.register("${name}JavadocJar", Jar::class) {
