@@ -3,7 +3,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 import kotlin.test.assertTrue
 
-class UUIDCreatorTest {
+class IOSUUIDCreatorTest {
 
     @Test
     fun `UUIDV1 format is valid`() {
