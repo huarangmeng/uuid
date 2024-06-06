@@ -71,3 +71,8 @@ private inline fun digits(value: Long, digits: Int): String {
     val hi = 1L shl (digits * 4)
     return (hi or (value and (hi - 1))).toString(16).substring(1)
 }
+
+/**
+ * Name space to be used when the name string is a fully-qualified domain name.
+ */
+val NAMESPACE_SDS = UUID(0x6ba7b8109dad11d1L, 0x80b400c04fd430c8U.toLong())
