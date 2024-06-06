@@ -4,7 +4,7 @@ plugins {
 
 allprojects {
     group = "io.github.huarangmeng"
-    version = "0.0.1"
+    version = "1.0.0"
 }
 
 nexusPublishing {
