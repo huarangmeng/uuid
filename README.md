@@ -2,21 +2,23 @@ This is a Kotlin Multi Platform library for generating [Universally Unique Ident
 
 support: android、ios、jvm
 
-List of implemented UUID types:
+The Internet standard [RFC 9562](https://www.rfc-editor.org/rfc/rfc9562) was published in May 2024, making RFC 4122 obsolete. This library is fully compliant with the new RFC, as it was developed following the evolution of the new standard until its publication.
 
-*   __UUID Version 1__: the Gregorian time-based type specified in RFC-4122;
-*   __UUID Version 2__: the DCE Security type with embedded POSIX UIDs specified in DCE 1.1;
-*   __UUID Version 3__: the name-based type specified in RFC-4122 that uses MD5 hashing;
-*   __UUID Version 4__: the randomly or pseudo-randomly generated type specified in RFC-4122;
-*   __UUID Version 5__: the name-based type specified in RFC-4122 that uses SHA1 hashing;
-*   __UUID Version 6__: the reordered Gregorian time-based type specified as a [new UUID format](https://datatracker.ietf.org/doc/draft-ietf-uuidrev-rfc4122bis/);
-*   __UUID Version 7__: the Unix Epoch time-based type specified as a [new UUID format](https://datatracker.ietf.org/doc/draft-ietf-uuidrev-rfc4122bis/).
+List of implemented UUID subtypes:
+
+*   __UUID Version 1__: the Gregorian time-based UUID specified in RFC 9562;
+*   __UUID Version 2__: the DCE Security version, with embedded POSIX UIDs, specified in DCE 1.1;
+*   __UUID Version 3__: the name-based version that uses MD5 hashing specified in RFC 9562;
+*   __UUID Version 4__: The randomly or pseudorandomly generated version specified in RFC 9562;
+*   __UUID Version 5__: the name-based version that uses SHA-1 hashing specified in RFC 9562;
+*   __UUID Version 6__: the reordered Gregorian time-based UUID specified in RFC 9562;
+*   __UUID Version 7__: the Unix Epoch time-based UUID specified in RFC 9562.
 
 ### `UUID`
 
 - Frozen
 - Thread-safe (thread-safe randomness in native)
-- Adheres to RFC4122
+- Adheres to RFC 9562
 - Tested
 - Tested against macOS/iOS UUID to verify correctness
 
