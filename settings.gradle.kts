@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "uuid"
-include(":library")
+include(":uuid")

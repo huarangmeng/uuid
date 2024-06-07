@@ -7,12 +7,19 @@ plugins {
     signing
 }
 
+tasks.withType<Jar>{
+    archiveBaseName.set("uuid")
+    archiveAppendix.set(project.name)
+}
+
 publishing {
     // Configure all publications
     publications.withType<MavenPublication> {
-        artifactId = "uuid"
+        artifactId = "uuid-${this@withType.name}"
         groupId = project.group.toString()
         version = project.version.toString()
+
+        println("artifactId = ${this.artifactId}")
 
         if (project.hasProperty("sonatypeUsername")) {
             println("sonatypeUsername = ${project.property("sonatypeUsername")}")
