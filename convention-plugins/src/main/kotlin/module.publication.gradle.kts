@@ -10,6 +10,10 @@ plugins {
 publishing {
     // Configure all publications
     publications.withType<MavenPublication> {
+        artifactId = "uuid"
+        groupId = project.group.toString()
+        version = project.version.toString()
+
         if (project.hasProperty("sonatypeUsername")) {
             println("sonatypeUsername = ${project.property("sonatypeUsername")}")
         }
@@ -17,7 +21,6 @@ publishing {
         // Stub javadoc.jar artifact
         artifact(tasks.register("${name}JavadocJar", Jar::class) {
             archiveBaseName.set("uuid")
-            archiveVersion.set("1.0.0")
             archiveClassifier.set("javadoc")
             archiveAppendix.set(this@withType.name)
         })

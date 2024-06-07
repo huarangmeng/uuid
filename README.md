@@ -1,4 +1,4 @@
-This is a Kotlin Multi Platform library for generating [Universally Unique Identifiers](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+This is a Kotlin Multiplatform library for generating [Universally Unique Identifiers](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
 support: android、ios、jvm
 
