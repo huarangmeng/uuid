@@ -1,6 +1,6 @@
 This is a Kotlin Multiplatform library for generating [Universally Unique Identifiers](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-support: android、ios、jvm
+support: `android`、`iosArm64`、`iosSimulatorArm64`、`iosX64`、`jvm`
 
 The Internet standard [RFC 9562](https://www.rfc-editor.org/rfc/rfc9562) was published in May 2024, making RFC 4122 obsolete. This library is fully compliant with the new RFC, as it was developed following the evolution of the new standard until its publication.
 
@@ -26,7 +26,15 @@ List of implemented UUID subtypes:
 
 In your build.gradle(.kts):
 
-This library publishes gradle module metadata. If you're using Gradle prior to version 6, you should have `enableFeaturePreview("GRADLE_METADATA")` in your settings.gradle(.kts).
+Add `mavenCentral()` to your repositories
+if it not work then
+```
+maven {
+    url = uri("https://s01.oss.sonatype.org/content/repositories/releases/")
+}
+```
+end
+Add implementation "io.github.huarangmeng:uuid:<version>" as a dependency in your commonMain sourceSets.
 
 ### Future Goals
 
