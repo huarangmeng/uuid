@@ -7,15 +7,21 @@ plugins {
     signing
 }
 
-tasks.withType<Jar>{
+tasks.withType<Jar> {
     archiveBaseName.set("uuid")
-    archiveAppendix.set(project.name)
+    if (project.name != "kotlinMultiplatform") {
+        archiveAppendix.set(project.name)
+    }
 }
 
 publishing {
     // Configure all publications
     publications.withType<MavenPublication> {
-        artifactId = "uuid-${this@withType.name}"
+        artifactId = if (name == "kotlinMultiplatform") {
+            "uuid"
+        } else {
+            "uuid-$name"
+        }
         groupId = project.group.toString()
         version = project.version.toString()
 
@@ -29,7 +35,9 @@ publishing {
         artifact(tasks.register("${name}JavadocJar", Jar::class) {
             archiveBaseName.set("uuid")
             archiveClassifier.set("javadoc")
-            archiveAppendix.set(this@withType.name)
+            if (name != "kotlinMultiplatform") {
+                archiveAppendix.set(this@withType.name)
+            }
         })
 
         // Provide artifacts information required by Maven Central
