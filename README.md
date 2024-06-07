@@ -26,15 +26,15 @@ List of implemented UUID subtypes:
 
 In your build.gradle(.kts):
 
-Add `mavenCentral()` to your repositories
-if it not work then
+- Add `mavenCentral()` to your repositories.
+- if it not work then
 ```
 maven {
     url = uri("https://s01.oss.sonatype.org/content/repositories/releases/")
 }
 ```
-end
-Add implementation "io.github.huarangmeng:uuid:<version>" as a dependency in your commonMain sourceSets.
+
+- Add implementation "io.github.huarangmeng:uuid:1.0.0" as a dependency in your commonMain sourceSets.
 
 ### Future Goals
 
